@@ -11792,14 +11792,13 @@ textarea.form-control-lg {
   font-weight: bold;
   text-decoration: none;
   font-style: normal;
-  font-variant: small-caps;
   text-transform: none;
   text-align: center;
   margin: 10px 10px 10px 10px;
   }
 
 #cajaloginformulario{
-  margin-top: 100px;
+  margin-top: 30px;
   border: 2px solid #1d453b;
   padding: 10px 10px 50px 10px;
   border-radius: 5px;
@@ -11829,3 +11828,23 @@ textarea.form-control-lg {
   color:whitesmoke ;
   
 }
+
+#footerloginGlobal{
+  margin-top: 50px;
+}
+
+#footerlogin{
+padding-right: 0px!important;
+padding-left: 0px!important;
+}
+
+#footerlogin2{
+  background-color: #1d453b;
+  }
+
+  #textofooter{
+    text-align: center;
+    color: white;
+    margin-top: 60px;
+  }
+
