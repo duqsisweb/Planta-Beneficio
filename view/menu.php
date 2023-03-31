@@ -16,78 +16,48 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta name="description" content="Plataforma portal empleados" />
-    <meta name="author" content="Santiago Guillen" />
+    <meta name="description" content="Plataforma Planta Beneficio" />
+    <meta name="author" content="Yon Gonzalez" />
     <title>Portal Empleados</title>
-    <link rel="icon" type="image/x-icon" href="../assets/image/duquesa-logo-blanco.svg" />
+    <link rel="icon" type="image/x-icon" href="../assets/image/faviconplanta.png" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js" integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous"></script>
 </head>
 
 <body>
-    <button class="btnMenu" onclick="showMenu()"><i class="material-icons">menu</i></button>
-    <button class='btnCloseMenu' onclick="hiddeMenu()"><i class="material-icons">reply</i></button>
-    <nav>
-        <a href="./inicio.php"><img class="logo" src="../assets/image/duquesa-logo-blanco.svg" ></a>
-        <p class="user"><?php echo utf8_encode($_SESSION['Name']); ?></p>
-        <hr class="lineUser">
-        <ul>
 
-            <li>Certificados
-                <ul class="children">
-                    <li><a href="./CertificadoLaboral.php">Certificado Laboral</a></li>
-                    <li><a href="./CertificadoRetencion.php">Certificado Retencion</a></li>
-                    <li><a href="./desprendibleNomina.php">Desprendible de nomina</a></li>
-                </ul>
-            </li>
-            <li><a class="listOption" href="./vacaciones.php">Vacaciones</a></li>
-            <li><a class="listOption" href="./formatosDuquesa.php">Formatos</a></li>
-            <li><a class="listOption" href="./reglamentoInterno.php" target="_blank">Reglamento Interno</a></li>
-            <li><a class="listOption" onclick="openmodal()">Cambiar Contraseña</a></li>
+   
+
+    <nav class="navbar navbar-dark bg-dark fixed-top">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#"> <a href="./inicio-planta.php"><img class="logo" src="../assets/image/plamerasheader.png" ></a></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
+      <div class="offcanvas-header">
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+      <div id="">
+      <a href="./inicio.php"><img id="inicioavatar" class="logo" src="../assets/image/perfil.png" ></a>
+      </div>
+      <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel"><p class="user"><?php echo utf8_encode($_SESSION['NOMBRE']); ?></p></h5>
+        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Desarollo 1 </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#desarollo2">Desarollo 2</a>
+          </li>
+          <a class="btn btn-danger btnCloseSesion" href="../closeSesion.php" role="button">Cerrar Sesión</a>
         </ul>
-        <a href="../closeSesion.php"><button class="btnCloseSesion">Cerrar Sesión</button></a>
-    </nav>
+      </div>
+    </div>
+  </div>
+</nav>
 
-    <section id="modalopass" class="containerchangepassword">
-        <button class="closeModalPass" onclick="closemodalpassword()">❌</button>
-        <form action="../function/cambiarContraseña.php" method="POST">
-            <div class="sectioninputs">
-                <label>Contraseña</label>
-                <input id="password" class="inputpass" type="password" name="newpassword" onkeyup="verifyPassword(event)" autocomplete="new-password">
-            </div>
-
-            <article class="containerinfo">
-                <p><span id="longpassword"></span>Minimo 8 caracteres</p>
-                <p><span id="verifyPass"></span>Minimo una letra mayuscula, un numero y un caracter especial</p>
-            </article> 
-            
-            <div class="sectioninputs">
-                <label>Confirmar Contraseña</label>
-                <input class="inputpass" type="password" name="matchPassword" onchange="matchpass(event)" autocomplete="new-password">
-                <p id="menssagematch" class="containermatch"></p>
-            </div>
-
-            <input type="hidden" name="emailuser" value="<?php echo $email;?>">
-
-            <div class="changepass">
-                <input id="btnchangepass" type="submit" name="changepassword" value="Cambiar contraseña" disabled>
-            </div>
-        </form>
-    </section>
-
-    <?php if ($estadopass == 0){ ?>
-            <script languaje "JavaScript">
-                alert("Debe cambiar su contraseña");
-                document.getElementById('modalopass').style.display = 'block';
-                document.querySelector('.closeModalPass').disabled = true;
-            </script><?php
-        }?>
-
-    <script src="../js/main.js"></script>
-    <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.2.146/pdf.min.js" integrity="sha512-hA0/Bv8+ywjnycIbT0xuCWB1sRgOzPmksIv4Qfvqv0DOKP02jSor8oHuIKpweUCsxiWGIl+QaV0E82mPQ7/gyw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </body>
 </html>
 

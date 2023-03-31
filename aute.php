@@ -18,7 +18,6 @@ if ($_POST['iniciar']) {
 	$usua=rtrim(odbc_result($resul, 'CODUSUARIO')); 
 	$pass=rtrim(odbc_result($resul, 'CLAVE'));
 
-
 	$usua=strtoupper($usua);
 	$usuario=strtoupper($usuario);
 
@@ -28,7 +27,7 @@ if ($_POST['iniciar']) {
 		$_SESSION['NOMBRE']=$Nombre;
 		?><script>
 			alert("Hola <?php echo $Nombre ?>");
-			window.location.href="view/inicio-planta.php"; 
+			window.location.href="view/inicio.php"; 
 		</script><?php 
 	}else{
 		?><script>

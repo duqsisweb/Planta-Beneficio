@@ -7,6 +7,11 @@ include '../conexionbd.php';
 if (isset($_SESSION['usuario'])) {
     require 'header.php';
     require '../function/funciones.php';
+ 
+    $data = funciones::buscarusuariop();
+
+    
+
 
 ?>
     <!DOCTYPE html>
@@ -25,8 +30,29 @@ if (isset($_SESSION['usuario'])) {
 
     <body>
         <section id="sectionContenido">
-                <h1>Pagina 1</h1>
-                   <H1>GRAFICOS HE INFORMACIÓN DEL SISTEMA</H1>  
+                
+
+        <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">CODUSUARIO<th>
+      <th scope="col">NOMBRE</th>
+    </tr>
+  </thead>
+  <tbody>
+  <?php foreach($data as $persona): ?> 
+    <tr>
+    <td><?php echo $persona['CODUSUARIO']; ?></td> 
+    <td><?php echo $persona['NOMBRE']; ?></td> 
+    </tr>
+    <?php endforeach; ?>  
+  </tbody>
+</table>
+
+                   
+                
+
+
         </section>
 
     </body>

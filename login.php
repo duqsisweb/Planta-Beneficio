@@ -46,7 +46,9 @@ error_reporting(0); ?>
         </div>
     </section>
 
-    <footer>
+</body>
+
+<footer>
         <div class="container-fluid" id="footerloginGlobal">
             <div class="row">
                 <div class="col-md-6" id="footerlogin">
@@ -60,8 +62,6 @@ error_reporting(0); ?>
             </div>
         </div>
     </footer>
-
-</body>
 
 </html>
 
