@@ -1,25 +1,28 @@
-<?php header('Content-Type: text/html; charset=UTF-8');
+<?php
 
+header('Content-Type: text/html; charset=UTF-8');
 session_start();
 error_reporting(0);
 
 include '../conexionbd.php';
 if (isset($_SESSION['usuario'])) {
-  require 'header.php';
-  require '../function/funciones.php';
-
-  $data = funciones::buscarprecionetofruta();
-
-
-
+require 'header.php';
+require '../function/funciones.php';
 
 ?>
-  <!DOCTYPE html>
-  <html lang="en">
+ <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+
+
+<meta http-equiv="Content-Language" content="en-gb" />
 
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta http-equiv="Content-Language" content="en-gb" />
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="Plataforma Planta Beneficio" />
     <meta name="author" content="Yon Gonzalez" />
     <title>Portal Empleados</title>
@@ -29,157 +32,107 @@ if (isset($_SESSION['usuario'])) {
 
 
     <!-- LINKS & SCRIPTS PARA CALENDARIO -->
-
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
-    <link rel="stylesheet" href="/resources/demos/style.css">
-    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.2/css/uikit.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.1/css/dataTables.uikit.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.1/js/dataTables.uikit.min.js"></script>
+    <script src="https://momentjs.com/downloads/moment.js"></script>
 
   </head>
 
   <body>
-    <!-- 
-    <section id="sectionContenido">
-      <label for="from">From</label>
-      <input type="text" id="from" name="from">
-      <label for="to">to</label>
-      <input type="text" id="to" name="to">
-
-    </section>
-
- -->
-
-
-
-
-
-    <section id="sectionContenido">
-
-
-      <div>
-
-        <form action="" method="GET">
-
-          <div class="row">
-
-            <div class="col-md-4">
-
-              <div class="form-group">
-                <label><b>Del Dia</b></label>
-                <input type="date" name="from_date" value="<?php if (isset($_GET['from_date'])) {
-                                                              echo $_GET['from_date'];
-                                                            } ?>" class="form-control">
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="form-group">
-                <label><b> Hasta el Dia</b></label>
-                <input type="date" name="to_date" value="<?php if (isset($_GET['to_date'])) {
-                                                            echo $_GET['to_date'];
-                                                          } ?>" class="form-control">
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="form-group">
-                <label><b></b></label> <br>
-                <button type="submit" class="btn btn-primary">Buscar</button>
-              </div>
-            </div>
-          </div>
-          <br>
-        </form>
-      </div>
-
-
-      <table class="table table-Light table-striped-columns table-hover">
-        <thead>
-          <tr>
-            <th scope="col">FRUTA</th>
-            <th scope="col">NIT</th>
-            <th scope="col">NOMBRE</th>
-            <th scope="col">PESO BRUTO</th>
-            <th scope="col">TARA</th>
-            <th scope="col">PESO_NETO</th>
-
-          </tr>
-        </thead>
-        <tbody>
-          <?php foreach ($data as $fila) : ?>
-            <tr>
-              <td><?php echo $fila['FRUTA']; ?></td>
-              <td><?php echo $fila['NIT']; ?></td>
-              <td><?php echo $fila['NOMBRE']; ?></td>
-              <td><?php echo $fila['PESO_BRUTO']; ?></td>
-              <td><?php echo $fila['TARA']; ?></td>
-              <td><?php echo $fila['PESO_NETO']; ?></td>
-            </tr>
-          <?php endforeach; ?>
-          
-        </tbody>
-      </table>
-    </section>
-
-
-
 
 
 
     <section class="sectionContenido">
+      <div class="container">
+        <div class="row">
+          <form class="container" method="GET">
+            <section class="row mt-1">
+              <section class="row col-12 mt-5">
+                <div class="col-6">
+                  <input class="form-control fechas" type="date" name="fecha" style="width: 100%;" required>
+                </div>
+              
+                <div class="col-6">
+                  <input type="submit" class="btn btn-success" name='consultar' value="Consultar" style="width: 100%;">
+                </div>
+              </section>
+            </section>
+          </form>
+        </div>
+      </div>
+
+      <?php
+
+      $F = new funciones;
+
+      if (isset($_GET['consultar'])) {
+
+        $fecha = $_GET['fecha'];
+        $ANIO = substr($fecha,0,4);
+        $MES = substr($fecha,5,2);
+ 
+        if (count($F->buscarprecionetofruta($fecha, $ANIO, $MES)) !== 0) { ?>
+
+          <div class="container">
+            <div class="text-right mt-3">
+              <div class="col-md-12">
+
+                <table class="table table-bordered table-striped table-hover ">
+                  <thead>
+                    <tr class="encabezado">
+                      <th scope="col">NIT</th>
+                      <th scope="col">NOMBRE Y/O FINCA</th>
+                      <th scope="col">PESO NETO DIARIO</th>
+                      <th scope="col">PESO NETO MENSUAL</th>
+                      <th scope="col">PRESUPUESTO</th>
+                      <th scope="col">CUMPLIMIENTO</th>
+                      <th scope="col">CUMPLIMIENTO PPTO</th>
+                      <th scope="col">ESTADO</th>
+                    </tr>
+                  </thead>
+
+                  <tbody >
+                    <?php
+                    $count = 1;
+
+                    foreach ($F->buscarprecionetofruta($fecha, $ANIO, $MES) as $a) {
+
+                      
+                        
+
+                      echo "<tr>
+                                                          
+                                                          <td style='width:10%'>" . $a['NIT'] . "</td>
+                                                          <td style='width:30%'>" . $a ['NOMBRE'] . "</td>
+                                                          <td style='width:10%;text-align: right;' >" . $a['PESO_NETO_DIARIO'] . "</td>
+                                                          <td style='width:10%;text-align: right;' >" . $a['PESO_NETO_MENSUAL'] . "</td>
+                                                          <td style='width:10%;text-align: right;' >" . $a['PRESUPUESTO'] . "</td>
+                                                          <td style='width:10%;text-align: right;' >" . $a['CUMPLIMIENTO'] . "</td>
+                                                          <td style='width:10%;text-align: right;' >" . $a['CUMPLIMIENTO_PPTO'] . "%</td>
+                                                          <td style='width:10%;text-align: right;' >" . $a['ESTADO'] . "</td>
+
+                            </tr>";
+                          }?> 
+                          </tbody>
+                  </table>
+                  <?php } else { ?>
+                      <div class="alert alert-danger mt-5" role="alert" align="center">No hay registros</div>
+                  <?php } }?>    
+                  </div>
+              </div>
+          </div>
 
 
 
-
-
-
-
-
-
-
-
-
-  </body>
-
-  </html>
-
-<?php } else { ?>
-  <script languaje "JavaScript">
-    alert("Acceso Incorrecto");
-    window.location.href = "../login.php";
-  </script><?php
-          } ?>
-
-
-
-<script>
-  $(function() {
-    var dateFormat = "mm/dd/yy",
-      from = $("#from")
-      .datepicker({
-        defaultDate: "+1w",
-        changeMonth: true,
-        numberOfMonths: 3
-      })
-      .on("change", function() {
-        to.datepicker("option", "minDate", getDate(this));
-      }),
-      to = $("#to").datepicker({
-        defaultDate: "+1w",
-        changeMonth: true,
-        numberOfMonths: 3
-      })
-      .on("change", function() {
-        from.datepicker("option", "maxDate", getDate(this));
-      });
-
-    function getDate(element) {
-      var date;
-      try {
-        date = $.datepicker.parseDate(dateFormat, element.value);
-      } catch (error) {
-        date = null;
-      }
-
-      return date;
-    }
-  });
-</script>
+      </body>
+      </html>
+      
+      <?php } else { ?>
+          <script languaje "JavaScript">
+              alert("Acceso Incorrecto");
+              window.location.href = "../login.php";
+          </script><?php
+      } ?>

@@ -11821,7 +11821,11 @@ textarea.form-control-lg {
 
 
 #sectionContenido{
-  margin: 150px 10px 10px 30px;
+  margin: 250px 5px 5px 30px;
+}
+
+.sectionContenido{
+  margin: 100px 10px 10px 30px;
 }
 
 #textoformulario{
@@ -11848,3 +11852,7 @@ padding-left: 0px!important;
     margin-top: 60px;
   }
 
+  .encabezado{
+    text-align: center;
+    
+  }
