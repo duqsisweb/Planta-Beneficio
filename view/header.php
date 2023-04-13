@@ -29,7 +29,7 @@ if (isset($_SESSION['usuario'])) {
 
         <nav class="navbar navbar-dark bg-dark fixed-top">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#"> <a href="./inicio-planta.php"><img class="logo" src="../assets/image/plamerasheader.png"></a></a>
+                <a class="navbar-brand" href="#"> <a href=""><img class="logo" src="../assets/image/plamerasheader.png"></a></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -49,7 +49,7 @@ if (isset($_SESSION['usuario'])) {
                                 <a class="nav-link active" aria-current="page" href="./inicio.php">Inicio </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="./pruebatbl.php">Prueba Tbl </a>
+                                <a class="nav-link" href="./pruebatbl.php">Beneficio</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="./Proyeccion.php">Proyección 2023 </a>

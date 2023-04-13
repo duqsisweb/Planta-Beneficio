@@ -5,17 +5,14 @@ error_reporting(0); ?>
 <html lang="en">
 
 <head>
-    <meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="Plataforma Planta Beneficio" />
     <meta name="author" content="Yon Gonzalez" />
     <title>Portal empleados</title>
     <link rel="icon" type="image/x-icon" href="./assets/image/faviconplanta.png" />
     <link rel="stylesheet" href="./css/bootstrap.css">
-
     <!-- Fuentes -->
-
-
 </head>
 
 <body>
@@ -46,22 +43,24 @@ error_reporting(0); ?>
         </div>
     </section>
 
-</body>
-
-<footer>
+    <footer>
         <div class="container-fluid" id="footerloginGlobal">
             <div class="row">
                 <div class="col-md-6" id="footerlogin">
-                    <img src="./assets/image/palmerasdelllanofooter1.png" alt=" Palmeras" href="" style="width: 100%;">
+                    <img src="./assets/image/palmerasdelllanofooter1.png" alt=" Palmeras" href="https://palmar.com.co/palmerasdelllano/index.php" style="width: 100%;">
                 </div>
                 <div class="col-md-6" id="footerlogin2">
                     <div>
-                        <p id="textofooter">| Sistemas | Correo: desarrolladorweb@duquesa.com. ©2023 All Rights Reserved.</p>
+                        <p id="textofooter">| Sistemas | Correo: <a href="mailto:tecnologia@palmar.com.co" style="color:aliceblue">tecnologia@palmar.com.co</a> ©<?php echo date('Y'); ?> All Rights Reserved.</p>
                     </div>
                 </div>
             </div>
         </div>
     </footer>
+
+</body>
+
+
 
 </html>
 

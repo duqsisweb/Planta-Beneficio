@@ -4,6 +4,7 @@
  * Copyright 2011-2022 The Bootstrap Authors
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
+ body { padding-bottom: 70px!important; }
 :root,
 [data-bs-theme=light] {
   --bs-blue: #0d6efd;
@@ -11834,7 +11835,12 @@ textarea.form-control-lg {
 }
 
 #footerloginGlobal{
-  margin-top: 50px;
+  text-align: center;
+  font-family: sans-serif;
+  width: 100%;
+  bottom: 0;
+  position:fixed;
+ 
 }
 
 #footerlogin{
@@ -11855,4 +11861,9 @@ padding-left: 0px!important;
   .encabezado{
     text-align: center;
     
+  }
+
+  #btncolor{
+    background-color: #1d453b;
+    width: 100%;
   }

@@ -32,23 +32,6 @@ if (isset($_SESSION['usuario'])) {
         <section id="sectionContenido">
                 
 
-        <table class="table">
-  <thead>
-    <tr>
-      <th scope="col">CODUSUARIO<th>
-      <th scope="col">NOMBRE</th>
-    </tr>
-  </thead>
-  <tbody>
-  <?php foreach($data as $persona): ?> 
-    <tr>
-    <td><?php echo $persona['CODUSUARIO']; ?></td> 
-    <td><?php echo $persona['NOMBRE']; ?></td> 
-    </tr>
-    <?php endforeach; ?>  
-  </tbody>
-</table>
-
                    
                 
 
