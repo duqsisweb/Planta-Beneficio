@@ -80,4 +80,4 @@ error_reporting(0); ?>
 
 
 
-<!-- desarrolladorweb@duquesa.com.co -->
+<!-- tecnologia@palmar.com.co -->
