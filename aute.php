@@ -13,7 +13,7 @@ if ($_POST['iniciar']) {
 	$typeUser=$_POST['typeUser'];
 	$result;
 
-	$resul = odbc_exec($conexion, " SELECT MV.NOMBRE, RTRIM(MV.CODUSUARIO) AS CODUSUARIO, RTRIM(MV.PASSWORD) AS CLAVE FROM CONTROL_OFIMAEnterprise..MTUSUARIO AS MV WHERE (MV.CODUSUARIO = '$usuario' AND MV.CODUSUARIO IN ('HRODRIGUEZ','JQUINTERO', 'LPACHON', 'SVERA', 'YTANGARIFE', 'DHENAO', 'JYDIAZ', 'YCHAVERRA', 'SGUILLEN', 'JCASILIMAS', 'YFGONZALEZ' )) AND MV.PASSWORD = '$password'") or die(exit("Error al ejecutar consulta"));
+	$resul = odbc_exec($conexion, " SELECT MV.NOMBRE, RTRIM(MV.CODUSUARIO) AS CODUSUARIO, RTRIM(MV.PASSWORD) AS CLAVE FROM CONTROL_OFIMAEnterprise..MTUSUARIO AS MV WHERE (MV.CODUSUARIO = '$usuario' AND MV.CODUSUARIO IN ('HRODRIGUEZ','JQUINTERO', 'LPACHON', 'SVERA', 'YTANGARIFE', 'DHENAO', 'JYDIAZ', 'YCHAVERRA', 'SGUILLEN', 'JCASILIMAS', 'YFGONZALEZ' , 'ESOLANO')) AND MV.PASSWORD = '$password'") or die(exit("Error al ejecutar consulta"));
 	$Nombre=odbc_result($resul, 'NOMBRE');
 	$usua=rtrim(odbc_result($resul, 'CODUSUARIO')); 
 	$pass=rtrim(odbc_result($resul, 'CLAVE'));
