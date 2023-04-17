@@ -10,7 +10,8 @@ if (isset($_SESSION['usuario'])) {
   require '../function/funciones.php';
 
 ?>
-
+  <!DOCTYPE html>
+  <html lang="en">
   <body>
     <section class="sectionContenido">
       <div class="">
@@ -64,7 +65,7 @@ if (isset($_SESSION['usuario'])) {
                       echo "<tr>
                                                           
                                                           <td style='width:10%'>" . $a['NIT'] . "</td>
-                                                          <td style='width:30%'>" . utf8_encode($a['NOMBRE'] ). "</td>
+                                                          <td style='width:30%'>" . utf8_encode($a['NOMBRE']) . "</td>
                                                           <td style='width:10%;text-align: right;' >" . $a['PESO_NETO_DIARIO'] . "</td>
                                                           <td style='width:10%;text-align: right;' >" . $a['PESO_NETO_MENSUAL'] . "</td>
                                                           <td style='width:10%;text-align: right;' >" . $a['PRESUPUESTO'] . "</td>
@@ -76,17 +77,17 @@ if (isset($_SESSION['usuario'])) {
                     } ?>
                   </tbody>
                   <tfoot>
-                                <tr>
-                                    <th></th>
-                                    <th></th>
-                                    <th></th>
-                                    <th></th>
-                                    <th></th>
-                                    <th></th>
-                                    <th></th>
-                                    <th></th>
-                                </tr>
-                            </tfoot>
+                    <tr>
+                      <th></th>
+                      <th></th>
+                      <th></th>
+                      <th></th>
+                      <th></th>
+                      <th></th>
+                      <th></th>
+                      <th></th>
+                    </tr>
+                  </tfoot>
                 </table>
               <?php } else { ?>
                 <div class="alert alert-danger mt-5" role="alert" align="center">No hay registros</div>
@@ -124,7 +125,7 @@ if (isset($_SESSION['usuario'])) {
 
 
       var estados = $('#mtable').DataTable({
-        
+
         "createdRow": function(row, data, index) {
           //pintar una celda
           if (data[7] == "ALTO") {
@@ -162,7 +163,7 @@ if (isset($_SESSION['usuario'])) {
       var exportacion = $('#mtable').DataTable({
         "bDestroy": true,
         "bJQueryUI": true,
-        "paginate":false,
+        "paginate": false,
         "iDisplayLength": 30,
         searching: false,
         dom: 'Bfrtip',
@@ -171,7 +172,7 @@ if (isset($_SESSION['usuario'])) {
         ]
       });
 
-      
+
       // var sumatbl = $('#mtable').DataTable({
       //   "drawCallback":function(){
       //                 //alert("La tabla se está recargando"); 

@@ -18,15 +18,15 @@ if (isset($_SESSION['usuario'])) {
         <meta name="description" content="Plataforma Planta Beneficio" />
         <meta name="author" content="Yon Gonzalez" />
         <title>Portal Empleados</title>
-        <link rel="icon" type="image/x-icon" href="../assets/image/faviconplanta.png" />
-        <link rel="stylesheet" href="../css/bootstrap.css">
+        <link rel="icon" type="image/x-icon" href="../assets/image/faviconplanta.png"/>
+        <link rel="stylesheet" href="../css/bootstrap.css"/>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js" integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous"></script>
     </head>
 
     <body>
         <section id="sectionContenido">
-                <h1>Pagina 1</h1>
-                   <H1>GRAFICOS HE INFORMACIÓN DEL SISTEMA</H1>  
+                
+                   <H1>Dashboard</H1>  
         </section>
 
     </body>

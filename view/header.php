@@ -8,7 +8,7 @@ if (isset($_SESSION['usuario'])) {
 
 ?>
     <!DOCTYPE html>
-    <html lang="es">/>
+    <html lang="es">
 
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -30,7 +30,7 @@ if (isset($_SESSION['usuario'])) {
         <meta name="description" content="Plataforma Planta Beneficio" />
         <meta name="author" content="Yon Gonzalez" />
         <title>Proyeccion</title>
-        <link rel="icon" type="image/x-icon" href="../assets/image/faviconplanta.png" />
+        <link rel="icon" type="image/x-icon" href="../Plantabeneficio/assets/image/faviconplanta.png" />
 
         <!-- CDN BOOSTRAP -->
         <link rel="stylesheet" href="../css/bootstrap.css">

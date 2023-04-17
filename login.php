@@ -10,7 +10,7 @@ error_reporting(0); ?>
     <meta name="description" content="Plataforma Planta Beneficio" />
     <meta name="author" content="Yon Gonzalez" />
     <title>Portal empleados</title>
-    <link rel="icon" type="image/x-icon" href="./assets/image/faviconplanta.png" />
+    <link rel="icon" type="image/x-icon" href="../Plantabeneficio/assets/image/faviconplanta.png" />
     <link rel="stylesheet" href="./css/bootstrap.css">
     <!-- Fuentes -->
 </head>
@@ -33,7 +33,7 @@ error_reporting(0); ?>
                         </div>
                         <div class="mb-3">
                             <label for="exampleInputPassword1" class="form-label" id="textoformulario">Contraseña</label>
-                            <input type="password" class="form-control" id="textoformulario" name="password" autocomplete="off" required>
+                            <input type="password" class="form-control" id="" name="password" autocomplete="off" required>
                         </div>
                         <button type="submit" class="btn btn-success" name="iniciar" value="Ingresar">Iniciar</button>
                     </form>
