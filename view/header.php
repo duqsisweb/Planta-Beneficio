@@ -53,6 +53,7 @@ if (isset($_SESSION['usuario'])) {
         <!-- SUM()  Datatables-->
         <script src="https://cdn.datatables.net/plug-ins/1.10.20/api/sum().js"></script>
 
+
     </head>
 
     <body>
@@ -79,7 +80,7 @@ if (isset($_SESSION['usuario'])) {
                                 <a class="nav-link active" aria-current="page" href="./inicio.php">Inicio </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="./pruebatbl.php">Beneficio</a>
+                                <a class="nav-link" href="./beneficio.php">Beneficio</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="./Proyeccion.php">Proyección 2023 </a>

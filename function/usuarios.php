@@ -8,7 +8,7 @@
 
     include 'funciones.php';
 
-    $result = funciones::buscarusuario();
+    $result = funciones::buscarusuariop();
     print_r($result);
 
 } else { ?>

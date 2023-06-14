@@ -12,25 +12,34 @@ if (isset($_SESSION['usuario'])) {
 ?>
   <!DOCTYPE html>
   <html lang="en">
+
   <body>
     <section class="sectionContenido">
+
       <div class="">
         <div class="row">
           <form class="container" method="POST">
             <section class="row mt-1">
               <section class="row col-12 mt-5">
-                <div class="col-6">
-                  <input class="form-control fechas" type="date" name="fecha" style="width: 100%;" id="datePickerId" required>
+                <div class="col-md-4"></div>
+                <div class="col-md-2">
+                  <h5 style="text-align: center;margin-top: 50px;">
+                    </h><br><br>
+                    <input class="form-control fechas" type="date" name="fecha" style="width: 100%;" id="datePickerId" required>
                 </div>
-                <div class=" col-6">
-                  <input type="submit" class="btn btn-success" name='consultar' value="Consultar" id="btncolor">
+                <div class="col-2">
+                  <h5 style="text-align: center;margin-top: 100px;">
+                    </h>
+                    <input type="submit" class="btn btn-success" name='consultar' value="Consultar" id="btncolor">
                 </div>
+                <div class="col-md-4"></div>
               </section>
             </section>
           </form>
         </div>
       </div>
       <?php
+
       $F = new funciones;
       if (isset($_POST['consultar'])) {
 
@@ -196,6 +205,33 @@ if (isset($_SESSION['usuario'])) {
     });
   </script>
   <!-- fn script de rango de fechas -->
+
+
+  <!-- <script>
+    // Función para calcular la suma total de una columna
+    function calcularSumaTotal(columna) {
+      let total = 0;
+      const columnCells = document.querySelectorAll(`#mtable tbody td:nth-child(${columna})`);
+      columnCells.forEach((cell) => {
+        const valor = parseFloat(cell.textContent.replace(/[^0-9.-]+/g, ''));
+        if (!isNaN(valor)) {
+          total += valor;
+        }
+      });
+      return total;
+    }
+
+    // Obtener las sumas totales
+    const ingresoRffDiarioTotal = calcularSumaTotal(3);
+    const ingresoRffMensualTotal = calcularSumaTotal(4);
+    const presupuestoMesTotal = calcularSumaTotal(5);
+
+    // Mostrar las sumas totales en el footer de la tabla
+    const footerRow = document.querySelector('#mtable tfoot tr');
+    footerRow.children[2].textContent = ingresoRffDiarioTotal.toFixed(2);
+    footerRow.children[3].textContent = ingresoRffMensualTotal.toFixed(2);
+    footerRow.children[4].textContent = presupuestoMesTotal.toFixed(2);
+  </script> -->
 
 
 <?php } else { ?>
